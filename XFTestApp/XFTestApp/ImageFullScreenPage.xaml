@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="XFTestApp.ImageFullScreen">
+    <ContentPage.Content>
+      <ScrollView >
+            <ffimageloading:CachedImage HorizontalOptions="Center" 
+                                                            WidthRequest="500"
+                                                            HeightRequest="500"
+			                                                DownsampleToViewSize ="true"
+			                                                Source = "{Binding Link}">
+                <ffimageloading:CachedImage.GestureRecognizers>
+                    <!--<PanGestureRecognizer PanUpdated="OnPanUpdated" />-->
+                    <PinchGestureRecognizer PinchUpdated="OnPinchUpdated" />
+                </ffimageloading:CachedImage.GestureRecognizers>
+            </ffimageloading:CachedImage>
+        </ScrollView>
+  </ContentPage.Content>
+</ContentPage>
